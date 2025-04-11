@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque - Martins Peres</title>
+    <link rel="stylesheet" href="src/styles/styles.css"> <!-- Incluindo o CSS principal, se desejar -->
+    <style>
+        /* Estilos gerais */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #165aa3;
+            color: rgb(252, 246, 246);
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .estoque-lista {
+            background-color: rgb(247, 246, 246);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .estoque-lista h2 {
+            color: #0a0909;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        ul li:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+
+        .estoque-lista ul li span {
+            font-weight: bold;
+            color: #112a42;
+        }
+
+        /* Estilos do formulário de contato */
+        .contato {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contato h2 {
+            color: #0f0d0d;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .contato form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contato form label {
+            font-weight: bold;
+            color: #1a1313;
+        }
+
+        .contato form input,
+        .contato form textarea {
+            padding: 12px;
+            border: 2px solid #5e5c5c;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            transition: border-color 0.3s ease;
+        }
+
+        .contato form input:focus,
+        .contato form textarea:focus {
+            border-color: #1d6fc7;
+            outline: none;
+        }
+
+        .contato form button {
+            background-color: #1868be;
+            color: rgb(255, 255, 255);
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contato form button:hover {
+            background-color: #ad0601;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            .contato form {
+                gap: 10px;
+            }
+
+            .contato form input,
+            .contato form textarea {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Estoque de Produtos</h1>
+    </header>
+    <section class="voltar-menu" style="text-align: center; margin-top: 20px;">
+        <a href="index.html">
+            <button style="padding: 12px 25px; font-size: 1rem; background-color: #1f72ca; color: rgb(253, 252, 252); border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">Voltar para o Menu</button>
+        </a>
+    </section>
+
+    <main>
+        <section class="estoque-lista">
+            <h2>Itens Disponíveis</h2>
+            <ul>
+                <li>Produto 1 - <span>Quantidade: 10</span></li>
+                <li>Produto 2 - <span>Quantidade: 15</span></li>
+                <li>Produto 3 - <span>Quantidade: 5</span></li>
+                <li>Produto 4 - <span>Quantidade: 30</span></li>
+                <li>Produto 5 - <span>Quantidade: 30</span></li>
+                <li>Produto 6 - <span>Quantidade: 30</span></li>
+                <li>Produto 7 - <span>Quantidade: 30</span></li>
+                <li>Produto 8 - <span>Quantidade: 30</span></li>
+                <li>Produto 9 - <span>Quantidade: 30</span></li>
+            </ul>
+        </section>
+
+        <section class="contato">
+            <h2>Entre em contato para mais informações de estoque e valores:</h2>
+
+            <form id="whatsappForm" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" value="contato@exemplo.com" required>
+
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("whatsappForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var nome = encodeURIComponent(document.getElementById("nome").value);
+            var email = encodeURIComponent(document.getElementById("email").value);
+            var mensagem = encodeURIComponent(document.getElementById("mensagem").value);
+
+            var whatsappUrl = "https://wa.me/5511999999999?text=Nome: " + nome + "%0AEmail: " + email + "%0AMensagem: " + mensagem;
+
+            window.open(whatsappUrl, "_blank");
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/styles/styles.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Martins Peres loja oficial</title>
+    <style>
+        .breadcrumb {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+
+          display: flex;
+        }
+        .breadcrumb-item {
+          margin-right: 5px;
+        }
+        .breadcrumb-item + .breadcrumb-item:before {
+          content: ">";
+          margin-left: 5px;
+        }
+        .breadcrumb-item a {
+          text-decoration: none;
+          color: #032f5e;
+        }
+        .breadcrumb-item a:hover {
+          text-decoration: underline;
+        }
+        .breadcrumb-item.active {
+          color: #163447;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <i class="fa-solid fa-screwdriver-wrench" id="nav_logo"> Martins Peres</i>
+    
+            <ul id="nav_list">
+                <li class="nav-item">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu">Alguns de Nossos Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials">Avaliações</a>
+                </li>
+                <li class="nav-item">
+                    <a href="estoque.html">Estoque</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pedidos.html">Peça aqui</a>
+                </li>
+            </ul>
+    
+            <!-- Botão de menu para dispositivos móveis -->
+            <button id="mobile_btn" aria-label="Abrir menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+    
+        <!-- Menu móvel -->
+        <div id="mobile_menu">
+            <ul id="mobile_nav_list">
+                <li class="nav-item">
+                    <a href="#home">Início</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#menu">Alguns de Nossos Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials">Avaliações</a>
+                </li>
+                <li class="nav-item">
+                    <a href="estoque.html">Estoque</a>
+                </li>
+                <li class="nav-item">
+                    <a href="pedidos.html">Peça aqui</a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    
+
+    <main id="content">
+        <section id="home">
+            <div class="shape"></div>
+            <div id="cta">
+                <h1 class="title">
+                    Martins Peres
+                    <span>Comercio de Máquinas e Ferramentas</span>
+                </h1>
+                <p class="description">
+                    Mais de 60 anos de tradição no comércio de ferramentas.
+                </p>
+                <div id="cta_buttons">
+                    <a href="produtos.html" class="btn-default">Ver Produtos</a>
+
+                    <a href="tel:+113207-2077" id="phone_button">
+                        <button class="btn-default">Ligue</button>
+                            <i class="fa-solid fa-phone"></i>
+                        </button>
+                        (11) 3207-2077
+                    </a>
+                </div>
+                <div class="social-media-buttons">
+                    <a href="" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <a href="https://www.instagram.com/martinsperesferramentas/" aria-label="Instagram Martins Peres Ferramentas">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        
+                        <a href="https://www.tiktok.com/@martinsperesferramenta?is_from_webapp=1&amp;sender_device=pc" aria-label="TikTok Martins Peres Ferramentas">
+                            <i class="fa-brands fa-tiktok"></i>
+                        </a>
+                        
+                        <a href="https://www.facebook.com/MartinsPeresFerramenta/" aria-label="Facebook Martins Peres Ferramentas">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                </div>
+            </div>
+            <div id="banner">
+                <img src="src/images/mp.png" alt="">
+            </div>
+        </section>
+
+         <!-- Produtos -->
+    <section id="menu" class="fade-in">
+      <h2 class="section-tittle">Mercadorias</h2>
+      <h3 class="section-subtitle">Nossas máquinas e ferramentas</h3>
+
+      <div id="dishes" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+        <!-- Produto 1 -->
+        <div class="dish fade-in">
+          <div class="dish-heart">
+            <i class="fa-solid fa-shopping-cart"></i>
+          </div>
+          <img src="src/images/mandril_para_furadeira c-chave.png" width="200" height="200" class="dish-image" alt="">
+          <h3 class="dish-title">Mandril com Chave para Furadeira</h3>
+          <span class="dish-discription">Eficiência, segurança e durabilidade em perfuração.</span>
+          <div class="dish-rate">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <span>(500+)</span>
+          </div>
+          <div class="dish-price"><h4>Valor a Consultar</h4></div>
+          <a href="pedidos.html"><button class="btn-default">Eu Quero</button></a>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="dish fade-in">
+          <div class="dish-heart">
+            <i class="fa-solid fa-shopping-cart"></i>
+          </div>
+          <img src="src/images/broca rebaixada.webp" width="200" height="200" class="dish-image" alt="">
+          <h3 class="dish-title">Broca Rebaixada</h3>
+          <span class="dish-discription">Ferramentas de corte especializadas.</span>
+          <div class="dish-rate">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <span>(500+)</span>
+          </div>
+          <div class="dish-price"><h4>Valor a Consultar</h4></div>
+          <a href="pedidos.html"><button class="btn-default">Eu Quero</button></a>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="dish fade-in">
+          <div class="dish-heart">
+            <i class="fa-solid fa-shopping-cart"></i>
+          </div>
+          <img src="src/images/broca anelar.png" width="200" height="200" class="dish-image" alt="">
+          <h3 class="dish-title">Broca Anelar</h3>
+          <span class="dish-discription">Perfuração de grandes diâmetros com precisão.</span>
+          <div class="dish-rate">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <span>(500+)</span>
+          </div>
+          <div class="dish-price"><h4>Valor a Consultar</h4></div>
+          <a href="pedidos.html"><button class="btn-default">Eu Quero</button></a>
+        </div>
+      </div>
+
+        <section id="testimonials">
+            <img src="src/images/mp2.webp" style="width: 25%; height: auto;" id="testimonials_MP" alt="">
+
+            <div id="testimonials_content">
+                <h2 class="section-tittle">
+                    Depoimentos
+                </h2>
+                <h3 class="section-subtitle">
+                    O que os clientes falam sobre nós
+                </h3>
+
+                <div id="feedbacks">
+                    <div class="feedback">
+                        <img src="src/images/img.png" style="width: 10%; height: auto;" alt="">
+                        <div class="feedback-content">
+                            <p>
+                                Yuri Golçalves
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                            </p>
+                            <p>
+                                "Um lugar em que todo profissional que lida com mecânica industrial acha suas ferramentas, sempre que fui eu sempre fui muito bem atendido."
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="feedback">
+                        <img src="src/images/img.png" style="width: 10%; height: auto;" alt="">
+                        <div class="feedback-content">
+                            <p>
+                                Newton Lannoni
+                                <span>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                            </p>
+                            <p>
+                                "Loja das antigas com muita ferramenta e bons preços. Recomendo!"
+                            </p>
+                        </div>
+                    </div>
+
+                <div class="feedback">
+                    <img src="src/images/img.png" style="width: 10%; height: auto;" alt="">
+                    <div class="feedback-content">
+                        <p>
+                            Luis Fernandes
+                            <span>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                        </p>
+                        <p>
+                            "Ótimo atendimento. Sem enrolação e com produtos muito bons."
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feedback">
+                    <img src="src/images/img.png" style="width: 10%; height: auto;" alt="">
+                    <div class="feedback-content">
+                        <p>
+                            Jose Natalino Ribeiro Gringo 
+                            <span>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                        </p>
+                        <p>
+                            "Atendimento muito bom e sempre encontro o que procuro para meu uso em mecânica metalúrgica"
+                        </p>
+                    </div>
+                </div>
+
+                <div class="feedback">
+                    <img src="src/images/img.png" style="width: 10%; height: auto;" alt="">
+                    <div class="feedback-content">
+                        <p>
+                            Ricardo Sampaio de Assis
+                            <span>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                        </p>
+                        <p>
+                            "Atendimento cordial. Variedade de máquinas e ferramentas."
+                        </p>
+                    </div>
+               </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <img src="src/images/wave.svg" alt=""style="width: 1500px; height: auto;">
+
+        <div id="footer_items">
+            <span id="coopyright">
+                &copy 2025 Júlia Oliveira
+            </span>
+            
+        </div>
+    </footer>
+    
+<script src="src/javascript/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Contato</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Resetando margens e preenchimento padrão */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+      margin: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: 500;
+      color: #444;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+      color: #333;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      border-color: #0251ac;
+      outline: none;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+
+    .error {
+      color: rgb(6, 129, 167);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    button {
+      background-color: #044191;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #2496ca;
+    }
+
+    .success {
+      color: green;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .back-button {
+      background-color: #f44336;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .back-button:hover {
+      background-color: #e53935;
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      .form-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="form-container">
+    <h2>Fale diretamente com o vendedor</h2>
+    <form id="contactForm">
+      <div class="form-group">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        <div id="nameError" class="error"></div>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <div id="emailError" class="error"></div>
+      </div>
+      <div class="form-group">
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" required></textarea>
+        <div id="messageError" class="error"></div>
+      </div>
+      <button type="submit">Enviar</button>
+      <div id="successMessage" class="success"></div>
+    </form>
+    <section class="voltar-menu"><a href="index.html">
+            <button>Voltar para o Menu</button>
+        </a>
+    </section>
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Evita o envio padrão do formulário
+
+      // Limpar mensagens de erro e sucesso
+      document.getElementById('nameError').textContent = '';
+      document.getElementById('emailError').textContent = '';
+      document.getElementById('messageError').textContent = '';
+      document.getElementById('successMessage').textContent = '';
+
+      // Obter dados do formulário
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      let valid = true;
+
+      // Validar o nome
+      if (name === '') {
+        document.getElementById('nameError').textContent = 'Por favor, insira seu nome.';
+        valid = false;
+      }
+
+      // Validar o e-mail
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById('emailError').textContent = 'Por favor, insira um e-mail válido.';
+        valid = false;
+      }
+
+      // Validar a mensagem
+      if (message === '') {
+        document.getElementById('messageError').textContent = 'Por favor, insira sua mensagem.';
+        valid = false;
+      }
+
+      // Se o formulário for válido, criar o link para o WhatsApp
+      if (valid) {
+        const phoneNumber = '5511983074258'; // Substitua com o número do WhatsApp para o qual você quer enviar a mensagem (inclua o código do país)
+        const whatsappMessage = encodeURIComponent(`*Nome:* ${name}\n*E-mail:* ${email}\n*Mensagem:* ${message}`);
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+        // Redireciona para o WhatsApp com a mensagem
+        window.location.href = whatsappURL;
+
+        // Exibe a mensagem de sucesso
+        document.getElementById('successMessage').textContent = 'Mensagem enviada com sucesso! Você será redirecionado para o WhatsApp.';
+      }
+    });
+  </script>
+</body>
+</html>

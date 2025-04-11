@@ -1,0 +1,256 @@
+/* Seção Home (Hero) */
+#home {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #f0f4f8, #ffffff);
+  padding: 4rem 2rem;
+  gap: 2rem;
+}
+
+#cta {
+  flex: 1;
+  min-width: 280px;
+  animation: fadeInLeft 1s ease;
+}
+
+#cta .title {
+  font-size: 2.8rem;
+  color: #032f5e;
+}
+
+#cta .title span {
+  display: block;
+  font-size: 1.3rem;
+  color: #b10707;
+  margin-top: 0.5rem;
+}
+
+#cta .description {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: #b10707;
+  line-height: 1.5;
+}
+
+#cta_buttons {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Botões */
+.btn-default {
+  background-color: #032f5e;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-default:hover {
+  background-color: #163447;
+  transform: translateY(-2px) scale(1.03);
+}
+
+#phone_button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #032f5e;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#phone_button:hover {
+  color: #0d61b7;
+}
+
+/* Botões nas redes sociais */
+.social-media-buttons {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-media-buttons a {
+  font-size: 1.5rem;
+  color: #032f5e;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-media-buttons a:hover {
+  transform: scale(1.2);
+  color: #0d61b7;
+}
+
+/* Banner */
+#banner {
+  flex: 1;
+  text-align: center;
+  animation: zoomIn 1s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.shape {
+  background-color: #b0c5f1;
+  width: 50%;
+  height: 86%;
+  position: absolute;
+  border-radius: 30% 20% 0% 50%;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+
+/* Imagem */
+#banner img {
+  max-width: 100%;  /* Tornando a imagem 100% da largura disponível */
+  height: auto;     /* Manter a proporção da imagem */
+  transform: scale(1.1);  /* Dá um efeito de zoom na imagem */
+  transition: transform 0.3s ease;  /* Suaviza o efeito de zoom */
+  border-radius: 12px;
+  box-shadow: none;
+  position: relative;
+  z-index: 2;
+  opacity: 0.9;
+}
+
+/* Animações */
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  #home {
+    flex-direction: column;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  #cta_buttons {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Ajuste o título */
+  #cta .title {
+    font-size: 2.5rem;
+  }
+
+  #cta .title span {
+    font-size: 1.1rem;
+  }
+
+  #cta .description {
+    font-size: 1rem;
+  }
+
+  /* Ajuste da imagem no banner */
+  #banner img {
+    max-width: 100%;
+    transform: scale(1); /* Remove o zoom */
+  }
+
+  .shape {
+    width: 60%;  /* Ajusta a largura do shape para mais responsivo */
+  }
+
+  /* Ocultar a imagem e o shape em telas pequenas */
+  @media (max-width: 768px) {
+    #banner img {
+      display: none;  /* Ocultar a imagem */
+    }
+
+    .shape {
+      display: none;  /* Ocultar o shape */
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #home {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  #cta_buttons {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Ajuste do título */
+  #cta .title {
+    font-size: 2.2rem;
+  }
+
+  #cta .description {
+    font-size: 1rem;
+  }
+
+  #banner img {
+    max-width: 100%;
+    transform: scale(1);  /* Remove zoom em celulares */
+    display: none;  /* Ocultar a imagem */
+  }
+
+  .shape {
+    width: 80%;  /* Aumenta a largura do shape para telas pequenas */
+    display: none;  /* Ocultar o shape em telas pequenas */
+  }
+}
+
+@media (max-width: 480px) {
+  #cta .title {
+    font-size: 1.8rem;  /* Menor ainda para celulares */
+  }
+
+  #cta .description {
+    font-size: 0.9rem;
+  }
+
+  #banner img {
+    max-width: 100%;
+    transform: scale(1);  /* Remove zoom em celulares */
+    display: none;  /* Ocultar a imagem */
+  }
+
+  .shape {
+    width: 90%;  /* Aumenta ainda mais para celulares */
+    display: none;  /* Ocultar o shape */
+  }
+}
+
+

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Produtos</title>
+    <style>
+        :root {
+            --primary-color: #074c8b;
+            --accent-color: #d10505;
+            --background-color: #d9e0eb;
+            --card-background: white;
+            --font-family: 'Arial', sans-serif;
+            --button-hover-color: #5f0404;
+            --button-bg-color: var(--accent-color);
+            --button-bg-color-alt: #01327a;
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            min-height: 100vh; /* Garante que o conteúdo tenha no mínimo a altura da janela */
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        main {
+            padding: 20px;
+            flex-grow: 1; /* Permite que o conteúdo ocupe o restante da tela */
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product h3 {
+            font-size: 1.5rem;
+            margin: 15px 0 10px;
+            color: #333;
+        }
+
+        .product p {
+            font-size: 1rem;
+            color: #666;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .product button {
+            background-color: var(--button-bg-color);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .product button:hover {
+            background-color: var(--button-hover-color);
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            /* Removido o position: fixed */
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Estilização do botão "Voltar para o Menu" */
+        .voltar-menu {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .voltar-menu button {
+            background-color: var(--button-bg-color-alt);
+            color: white;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .voltar-menu button:hover {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bem-vindo à Nossa Loja de Produtos</h1>
+</header>
+
+<main>
+    <div class="product-container">
+        <div class="product">
+            <img src="src/images/broca anelar.png" alt="Produto 1">
+            <h3>Broca Anelar</h3>
+            <p>Descrição breve do produto 1. Ótima qualidade e ótimo preço!</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/broca rebaixada.webp" alt="Produto 2">
+            <h3>Broca Rebaixada</h3>
+            <p>Descrição breve do produto 2. Perfeito para o seu dia a dia.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="produto3.jpg" alt="Produto 3">
+            <h3>Produto 3</h3>
+            <p>Descrição breve do produto 3. Conforto e praticidade em um só produto!</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="produto3.jpg" alt="Produto 3">
+            <h3>Produto 3</h3>
+            <p>Descrição breve do produto 3. Conforto e praticidade em um só produto!</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="produto3.jpg" alt="Produto 3">
+            <h3>Produto 3</h3>
+            <p>Descrição breve do produto 3. Conforto e praticidade em um só produto!</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="produto3.jpg" alt="Produto 3">
+            <h3>Produto 3</h3>
+            <p>Descrição breve do produto 3. Conforto e praticidade em um só produto!</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="produto3.jpg" alt="Produto 3">
+            <h3>Produto 3</h3>
+            <p>Descrição breve do produto 3. Conforto e praticidade em um só produto!</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+        <!-- Outros produtos -->
+
+    </div>
+
+    <!-- Seção "Voltar para o Menu" -->
+    <section class="voltar-menu">
+        <a href="index.html">
+            <button>Voltar para o Menu</button>
+        </a>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2025 Loja de Produtos. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
