@@ -4,8 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Formulário de Contato</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
   <style>
+    /* Definir as fontes locais */
+    @font-face {
+      font-family: 'Roboto';
+      src: url('src/fonts/Roboto-Regular.woff2') format('woff2'),
+           url('src/fonts/Roboto-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Roboto';
+      src: url('src/fonts/Roboto-Medium.woff2') format('woff2'),
+           url('src/fonts/Roboto-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+    }
+
     /* Resetando margens e preenchimento padrão */
     * {
       margin: 0;
@@ -81,7 +98,7 @@
     }
 
     button {
-      background-color: #044191;
+      background: linear-gradient(to right, #01367c, #08acc9);
       color: white;
       padding: 12px 20px;
       border: none;
@@ -94,7 +111,7 @@
     }
 
     button:hover {
-      background-color: #2496ca;
+      background: linear-gradient(to right, #01367c, #08acc9);
     }
 
     .success {
@@ -196,7 +213,7 @@
 
       // Se o formulário for válido, criar o link para o WhatsApp
       if (valid) {
-        const phoneNumber = '5511983074258'; // Substitua com o número do WhatsApp para o qual você quer enviar a mensagem (inclua o código do país)
+        const phoneNumber = '5511977721000'; // Substitua com o número do WhatsApp para o qual você quer enviar a mensagem (inclua o código do país)
         const whatsappMessage = encodeURIComponent(`*Nome:* ${name}\n*E-mail:* ${email}\n*Mensagem:* ${message}`);
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
 

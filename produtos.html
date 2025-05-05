@@ -69,7 +69,7 @@
             width: 100%;
             max-height: 250px;
             object-fit: cover;
-            border-radius: 8px;
+            border-radius: 10px;
         }
 
         .product h3 {
@@ -97,7 +97,7 @@
             padding: 12px 25px;
             font-size: 1rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
@@ -110,64 +110,126 @@
             background-color: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 20px 0;
+            padding: 20px 10px;
+            font-size: 0.9rem;
             /* Removido o position: fixed */
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .product-container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
-
-            .product-container {
-                grid-template-columns: 1fr;
-            }
         }
 
         /* Estilização do botão "Voltar para o Menu" */
         .voltar-menu {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 30px 0;
         }
 
         .voltar-menu button {
-            background-color: var(--button-bg-color-alt);
+            background-color: #01367c; 
             color: white;
             padding: 12px 25px;
             font-size: 1rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
 
         .voltar-menu button:hover {
-            background-color: var(--primary-color);
+            background-color: #08acc9; 
         }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+    .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .product-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .product h3 {
+        font-size: 1.3rem;
+    }
+
+    .price {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    .product-container {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+
+    .product {
+        padding: 15px;
+    }
+
+    .product h3 {
+        font-size: 1.2rem;
+    }
+
+    .product p {
+        font-size: 0.95rem;
+    }
+
+    .price {
+        font-size: 1.2rem;
+    }
+
+    .product button,
+    .voltar-menu button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}
+
     </style>
 </head>
 <body>
 
 <header>
     <h1>Bem-vindo à Nossa Loja de Produtos</h1>
+     <!-- Seção "Voltar para o Menu" -->
+     <section class="voltar-menu">
+        <a href="index.html">
+            <button>Voltar para o Menu</button>
+        </a>
+    </section>
+
 </header>
 
 <main>
     <div class="product-container">
-        <div class="product">
-            <img src="src/images/broca anelar.png" alt="Produto 1">
-            <h3>Broca Anelar</h3>
-            <p>Descrição breve do produto 1. Ótima qualidade e ótimo preço!</p>
+         <div class="product">
+            <img src="src/images/broca anular 2.webp" alt="Produto 1">
+            <h3>Broca Anular - HSS TORWELL</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+              <option value="">Polegadas</option>
+              <option value="1X1.3/8 HSS">1X1.3/8 HSS</option>
+              <option value="2.1/4X1.3/8"> 2.1/4X1.3/8</option>
+              <option value="2.3/8X1.3/8">2.3/8X1.3/8</option>
+              <option value="2.5/16X1.3/8 ">2.5/16X1.3/8 </option>
+              <option value="2X1.3/8">2X1.3/8</option>
+              <option value="3/4X1.3/8">3/4X1.3/8</option>
+              <option value="5/8X1.3/8">5/8X1.3/8</option>
+            </select>
+            <p>A broca anular em polegadas é a escolha ideal para quem trabalha com sistemas de medição imperial, comum em projetos industriais, estruturas metálicas e normas internacionais. Projetada para oferecer furos precisos, limpos e rápidos em metais, essa ferramenta é amplamente utilizada em furadeiras magnéticas e máquinas de usinagem de alta performance.</p>
             <div class="dish-price">
                 <h4>Valor a Consultar</h4>
             </div>
@@ -175,9 +237,46 @@
         </div>
 
         <div class="product">
-            <img src="src/images/broca rebaixada.webp" alt="Produto 2">
-            <h3>Broca Rebaixada</h3>
-            <p>Descrição breve do produto 2. Perfeito para o seu dia a dia.</p>
+            <img src="src/images/broca anular.webp" alt="Produto 2">
+            <h3>Broca Anular - HSS TORWELL</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+              <option value="">Milimetros</option>
+              <option value="12X25MM">12X25MM</option>
+              <option value="12X50MM">12X50MM</option>
+              <option value="19X25MM">19X25MM</option>
+              <option value="25X25MM">25X25MM</option>
+              <option value="27X25MM">27X25MM</option>
+              <option value="27X50MM">27X50MM</option>
+              <option value="28X25MM">28X25MM</option>
+              <option value="28X50MM">28X50MM</option>
+              <option value="30X25MM">30X25MM</option>
+              <option value="25X25MM">25X25MM</option>
+              <option value="32X25MM">32X25MM</option>
+              <option value="32X50MM">32X50MM</option>
+              <option value="33X25MM">33X25MM</option>
+              <option value="34X25MM">34X25MM</option>
+              <option value="35X25MM">35X25MM</option>
+              <option value="38X25MM">38X25MM</option>
+              <option value="38X50MM">38X50MM</option>
+              <option value="40X25MM">40X25MM</option>
+              <option value="40X50MM">40X50MM</option>
+              <option value="45X25MM">45X25MM</option>
+              <option value="45X50MM">45X50MM</option>
+              <option value="50X25MM">50X25MM</option>
+              <option value="51X50MM">51X50MM</option>
+              <option value="55X25MM">55X25MM</option>
+              <option value="55X50MM">55X50MM</option>
+              <option value="58X50MM">58X50MM</option>
+              <option value="60X25MM">60X25MM</option>
+              <option value="60X50MM">60X50MM</option>
+              <option value="65X25MM">65X25MM</option>
+              <option value="65X50MM">65X50MM</option>
+
+            </select>
+            
+
+            <p>A broca anular é ideal para aplicações industriais, serralherias, manutenção e construção civil, sendo amplamente usada em furadeiras magnéticas, tornos e centros de usinagem..</p>
             <div class="dish-price">
                 <h4>Valor a Consultar</h4>
             </div>
@@ -185,8 +284,375 @@
         </div>
 
         <div class="product">
-            <img src="produto3.jpg" alt="Produto 3">
-            <h3>Produto 3</h3>
+            <img src="src/images/broca sds plus.webp" alt="Produto 3">
+            <h3>Broca sds Plus-Diamond/Ht</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="6X160MM-DIAMOND">6X160MM-Diamond</option>
+                <option value="6X260MM-DIAMOND">6X260MM-Diamond</option>
+                <option value="8X260MM-DIAMOND">8X260MM-Diamod</option>
+                <option value="13X160MM-DIAMOND">13X160MM-Diamond</option>
+                <option value="13X310MM-DIAMOND">13X310MM-Diamond</option>
+                <option value="16X210MM-DIAMOND">16X210MM-Diamond</option>
+                <option value="16X260MM-DIAMOND">16X260MM-Diamond</option>
+                <option value="18X310MM-DIAMOND">18X310MM-Diamond</option>
+                <option value="19X210MM-DIAMOND">19X210MM-Diamond</option>
+                <option value="24X400MM-DIAMOND">24X400MM-Diamond</option>
+                <option value="6X210MM-HT">6X210MM-HT</option>
+                <option value="8X300MM-HT">8X300MM-HT</option>
+                <option value="12X210MM-HT">12X210MM-HT</option>
+                <option value="12X260MM-HT">12X260MM-HT</option>
+                <option value="13X300MM-HT">13X300MM-HT</option>
+                <option value="14X260MM-HT">14X260MM-HT</option>
+                <option value="14X300MM-HT">14X300MM-HT</option>
+                <option value="14X450MM-HT">14X450MM-HT</option>
+                <option value="16X160MM-HT">16X160MM-HT</option>
+                <option value="18X210MM-HT">18X210MM-HT</option>
+                <option value="18X260MM-HT">18X60MM-HT</option>
+                <option value="18X450MM-HT">18X450MM-HT</option>
+                <option value="20X450MM-HT">20X450MM-HT</option>
+                <option value="22X260MM-HT">22X260MM-HT</option>
+                <option value="22X300MM-HT">22X300MM-HT</option>
+                <option value="22X450MM-HT">22X450MM-HT</option>
+                <option value="24X300MM-HT">24X300MM-HT</option>
+            </select>
+            <p>Elas se destacam por seu sistema de fixação inovador, que permite uma troca rápida e segura de brocas sem a necessidade de chave, proporcionando maior praticidade e eficiência durante o trabalho.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/broca-sds-plus.webp" alt="Produto 3">
+            <h3>Broca sds Plus-MTX/Rocast</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="18X300MM">18X300MM</option>
+                <option value="20X300MM">20X300MM</option>
+                <option value="26X300MM">26X300MM</option>
+                <option value="14X310MM">14X310MM</option>
+                <option value="22X400MM">22X400MM</option>
+                <option value="25X260MM">25X260MM</option>
+            </select> 
+            <p>As brocas SDS Plus da MTX são projetadas para perfurações eficientes em materiais como concreto, alvenaria, pedra natural, tijolos e pisos. </p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/broca hp.webp" alt="Produto 3">
+            <h3>Broca Hp</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="310 KG 13 MM 0,095KG">310 KG 13 MM 0,095KG</option>
+                <option value=" 310 KG 14 MM 0,105KG"> 310 KG 14 MM 0,105KG</option>
+                <option value="310 KG 15 MM 0,130KG">310 KG 15 MM 0,130KG</option>
+                <option value="310 KG 16 MM 0,150KG">310 KG 16 MM 0,150KG</option>
+                <option value="310 KG 17 MM 0,170KG">310 KG 17 MM 0,170KG</option>
+                <option value="310 KG 18 MM 0,195KG ">310 KG 18 MM 0,195KG </option>
+                <option value="310 KG 19 MM 0,230KG">310 KG 19 MM 0,230KG</option>
+                <option value="310 KG 20 MM 0,250KG">310 KG 20 MM 0,250KG</option>
+            </select> 
+            <p> É uma ferramenta de alta performance, ideal para usinagem de metais ferrosos e não ferrosos. É amplamente utilizada em processos de usinagem, manutenção industrial e fabricação de peças mecânicas.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/bucha prolongadora.jfif" alt="BUCHA PROLONGADORA">
+            <h3>Bucha Prolongadora Torwell</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="CM1X2">CM1X2</option>
+                <option value="CM2X1">CM2X1</option>
+                <option value="CM2X4">CM2X4</option>
+                <option value="CM2X5">CM2X5</option>
+                <option value="CM3X1">CM3X1</option>
+                <option value="CM3X2">CM3X2</option>
+                <option value="CM3X3">CM3X3</option>
+                <option value="CM3X4">CM3X4</option>
+                <option value="CM3X5">CM3X5</option>
+                <option value="CM4X2">CM4X2</option>
+                <option value="CM4X3">CM4X3</option>
+                <option value="CM4X4">CM4X4</option>
+                <option value="CM4X5">CM4X5</option>
+                <option value="CM5X3">CM5X3</option>
+                <option value="CM5X4">CM5X4</option>
+                <option value="CM5X5">CM5X5</option>
+                <option value="CM5X6">CM5X6</option>
+                <option value="CM6X4">CM6X4</option>
+                <option value="CM6X5">CM6X5</option>
+            </select> 
+            <p>A bucha prolongadora Torwell é um componente de fixação robusto, projetado para proporcionar maior alcance e estabilidade na união de peças, especialmente em estruturas metálicas, móveis ou sistemas que demandam prolongamento do ponto de fixação. </p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/bucha redução para broca.webp" alt="Produto 3">
+            <h3>Bucha Redução Torwell/Bullsteel</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="CM3X 1-TORWELL">CM3X 1-TW</option>
+                <option value="CM4X 1-TORWELL">CM4X 1-TW</option>
+                <option value="CM5X 2-TORWELL">CM5X 2-TW</option>
+                <option value="CM5X 3-TORWELL">CM5X 3-TW</option>
+                <option value="CM6X 2-TORWELL">CM6X 2-TW</option>
+                <option value="CM2X 1-BULLSTEEL">CM2X 1-BS</option>
+                <option value="CM4x 2-BULLSTEEL">CM4X 2-BS</option>
+                <option value="CM5X 4-BULLSTEEL">CM5X 4-BS</option>
+            </select> 
+            <p>A bucha de redução é um tipo de adaptador utilizado principalmente em sistemas de tubulação para conectar dois tubos de diâmetros diferentes, permitindo que o fluxo de um fluido, gás ou material passe de um tamanho para outro de maneira eficiente.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/escareador.webp" alt="Produto 3">
+            <h3>Escareador Torwell</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="31,5MM 60G CM2">31,5MM 60G CM2</option>
+                <option value="40MM 60G CM3">40MM 60G CM3</option>
+                <option value="40MM 90G CM3">40MM 90G CM3</option>
+                <option value="50MM 60G CM3">50MM 60G CM3</option>
+                <option value="50MM 90G CM3">50MM 90G CM3</option>
+                <option value="31,5MM 90G CM2">31,5MM 90G CM2</option>
+                <option value="63MM 60G CM4">63MM 60G CM4</option>
+            </select> 
+            <p>O escareador Torwell é uma ferramenta de precisão desenvolvida para realizar o rebaixamento cônico de furos, permitindo o embutimento perfeito de parafusos com cabeça escareada</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/esquadro de luz.webp" alt="Produto 3">
+            <h3>Esquadro luz - Torwell</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="200X130MM C/FIO">200X130MM C/FIO</option>
+            </select> 
+            <p>​O Esquadro Luz Torwell é uma ferramenta de medição e marcação amplamente utilizada em marcenaria, carpintaria, construção civil e montagem de móveis. Projetado para oferecer precisão e durabilidade, é ideal para profissionais que buscam eficiência e qualidade em seus trabalhos.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+
+        <div class="product">
+            <img src="src/images/HASTE PARA MANDRIL.jpg" alt="Produto 3">
+            <h3>Haste Mandril Torwell/Bullsteel</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="2 B10">2 B10</option>
+                <option value="2 B12">2 B12</option>
+                <option value="2 J2">2 J2</option>
+                <option value="2 J3">2 J3</option>
+                <option value="2 J33">2 J33</option>
+                <option value="2 J6"> 2 J6</option>
+                <option value="3 B12">3 B12</option>
+                <option value="3 J2">3 J2</option>
+                <option value="3 J33">3 J33</option>
+                <option value="3 J5">3 J5</option>
+                <option value="4 B16">3 J6</option>
+                <option value="4 J33">4 J33</option>
+                <option value="4 J6">4 J6</option>
+                <option value="5 B18">5 B18</option>
+                <option value="1 B10">1 B10</option>
+                <option value="1 B12">1 B12</option>
+                <option value="1 B16">1 B16</option>
+                <option value="1 B18">1 B18</option>
+                <option value="2 B12">2 B12</option>
+                <option value="2 B16">2 B16</option>
+                <option value="2 B18">2 B18</option>
+                <option value="3 B16">3 B16</option>
+                <option value="3 B24">3 B24</option>
+            </select> 
+            <p>A haste para mandril é um componente essencial utilizado para acoplar mandris a máquinas operatrizes, como tornos, fresadoras, retíficas ou centros de usinagem.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/JOGO PRESILHA.jpg" alt="Produto 3">
+            <h3>Jogo Presilia - Bullsteel</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="M 8 STUD 10MM 58PCS">M 8 STUD 10MM 58PCS</option>
+            </select> 
+            <p>Conjunto completo de fixação mecânica, ideal para operações de usinagem em fresadoras, tornos e outras máquinas.Projetado para oferecer segurança, precisão e versatilidade, é amplamente utilizado por profissionais da indústria metalúrgica e oficinas mecânicas.​</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/mandril.webp" alt="Produto 3">
+            <h3>Mandril - Torwell</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value=" 3/8 X24UNF LEVE"> 3/8 X24UNF LEVE</option>
+                <option value="10MM 3/8 X24 LEVE">10MM 3/8 X24 LEVE</option>
+                <option value="10MM 3/8 X24 PESADO">10MM 3/8 X24 PESADO</option>
+                <option value="13MM B16">13MM B16</option>
+                <option value="20MM B22">20MM B22</option>
+            </select> 
+            <p>Mandris são componentes essenciais em máquinas-ferramentas, utilizados para fixar e centralizar peças durante operações como tornear, furar e fresar. Eles garantem a precisão e estabilidade necessárias para processos de usinagem de alta qualidade.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/MANDRIL CHAVE 16MM.JPG" alt="Produto 3">
+            <h3>Mandril-Bullsteel</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="3/8 X24UNF LEVE (BDJ3510)"> 3/8 X24UNF LEVE (BDJ3510)</option>
+                <option value="5/8 X16UNF LEVE (BDJ3516)">5/8 X16UNF LEVE (BDJ3516)</option>
+            </select> 
+            <p>Mandris são componentes essenciais em ferramentas como furadeiras, parafusadeiras, tornos e fresadoras, utilizados para fixar brocas, fresas, pontas montadas e bits para fixar parafusos.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/mandril ap rapido.png" alt="Produto 3">
+            <h3>Mandril-ApRapido Pesado/Leve</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="JO110 (1-10MM B12) PESADO">JO110 (1-10MM B12) PESADO</option>
+                <option value=" JO113 (1-13MM B16) PESADO"> JO113 (1-13MM B16) PESADO</option>
+                <option value="JO120 (5-20MM B22) PESADO">JO120 (5-20MM B22) PESADO</option>
+                <option value="JQ113 (1-13MM B16) LEVE">JQ113 (1-13MM B16) LEVE</option>
+                <option value="JQ120 (5-20MM B22) LEVE">JQ120 (5-20MM B22) LEVE</option>
+            </select> 
+            <p>É um componente essencial em furadeiras e tornos, projetado para fixar brocas ou outras ferramentas de corte com rapidez e segurança, sem a necessidade de chave. Ele facilita trocas ágeis e eficientes, aumentando a produtividade em ambientes industriais ou de oficina.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/martelo bola corneta.jfif" alt="Produto 3">
+            <h3>Martelo Bola - Corneta</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="200G">200G</option>
+         </select> 
+            <p>​O Martelo Bola Corneta é uma ferramenta robusta e confiável, amplamente utilizada por profissionais de funilaria, mecânica, serralheria e marcenaria.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/martelo corneta.jpg" alt="Produto 3">
+            <h3>Martelo Pedreiro - Corneta-Pequeno/Grande</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="pequeno">pequeno</option>
+                <option value="grande">grande</option>
+            </select> 
+            <p>​O Martelo de Pedreiro Corneta é uma ferramenta essencial para profissionais da construção civil, oferecendo robustez, precisão e durabilidade. Disponível em diferentes tamanhos, atende às diversas necessidades do dia a dia no canteiro de obras.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="src/images/martelo pena.webp" alt="Produto 3">
+            <h3>Martelo Pena - Corneta</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="200G">200G</option>
+            </select> 
+            <p> O Martelo Pena Corneta é uma ferramenta versátil e resistente, ideal para trabalhos de funilaria, mecânica e construção civil.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+
+        <div class="product">
+            <img src="src/images/paquimetro relogio.webp" alt="Produto 3">
+            <h3>Paq Relogio - Torwell</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="150MM-6">150MM-6</option>
+            </select> 
+            <p>​O Paquímetro com Relógio Torwell é um instrumento de medição de alta precisão, ideal para profissionais que necessitam de leituras rápidas e confiáveis em ambientes industriais, oficinas mecânicas e laboratórios. Com seu mostrador analógico de fácil leitura, permite medições detalhadas de dimensões internas, externas e de profundidade.​</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produto 3">
+            <h3>Ponta Giratoria - Bullsteel</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="CM2 SUPER">CM2 SUPER</option>
+            </select> 
+            <p>Descrição breve do produto 3. Conforto e praticidade em um só produto!</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        
+        <div class="product">
+            <img src="" alt="Produto 3">
+            <h3>Ponta Fixa c/Rebaixo - Torwell</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="CM2">CM2</option>
+                <option value="CM3 ">CM3 </option>
+                <option value="CM4">CM4</option>
+                <option value="CM5">CM5</option>
+            </select> 
             <p>Descrição breve do produto 3. Conforto e praticidade em um só produto!</p>
             <div class="dish-price">
                 <h4>Valor a Consultar</h4>
@@ -195,8 +661,54 @@
         </div>
 
         <div class="product">
-            <img src="produto3.jpg" alt="Produto 3">
-            <h3>Produto 3</h3>
+            <img src="" alt="Produto 3">
+            <h3>Ponta Fixa - Torwell</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="CM2">CM2</option>
+                <option value="CM3 ">CM3 </option>
+                <option value="CM4">CM4</option>
+                <option value="CM5">CM5</option>
+            </select> 
+            <p>Descrição breve do produto 3. Conforto e praticidade em um só produto!</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+
+        <div class="product">
+            <img src="src/images/tracador alt.webp" alt="Produto 3">
+            <h3>Tracador alt - Torwell</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="600MM">600MM</option>
+            </select> 
+            <p>É uma ferramenta essencial em ambientes industriais e oficinas mecânicas que exigem medições e marcações verticais precisas.</p>
+            <div class="dish-price">
+                <h4>Valor a Consultar</h4>
+            </div>
+            <button onclick="window.location.href='pedidos.html';">Fale com o vendedor</button>
+        </div>
+
+        <div class="product">
+            <img src="" alt="Produto 3">
+            <h3>Produtos</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+            </select> 
             <p>Descrição breve do produto 3. Conforto e praticidade em um só produto!</p>
             <div class="dish-price">
                 <h4>Valor a Consultar</h4>
@@ -205,8 +717,18 @@
         </div>
 
         <div class="product">
-            <img src="produto3.jpg" alt="Produto 3">
-            <h3>Produto 3</h3>
+            <img src="" alt="Produto 3">
+            <h3>Prod</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+            </select> 
             <p>Descrição breve do produto 3. Conforto e praticidade em um só produto!</p>
             <div class="dish-price">
                 <h4>Valor a Consultar</h4>
@@ -215,8 +737,17 @@
         </div>
 
         <div class="product">
-            <img src="produto3.jpg" alt="Produto 3">
-            <h3>Produto 3</h3>
+            <img src="" alt="Produto 3">
+            <h3>Prod</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+            </select> 
             <p>Descrição breve do produto 3. Conforto e praticidade em um só produto!</p>
             <div class="dish-price">
                 <h4>Valor a Consultar</h4>
@@ -225,8 +756,17 @@
         </div>
 
         <div class="product">
-            <img src="produto3.jpg" alt="Produto 3">
-            <h3>Produto 3</h3>
+            <img src="" alt="Produto 3">
+            <h3>Prod</h3>
+            <label for="tamanho">Nossas Medidas:</label>
+            <select name="tamanho" id="tamanho">
+                <option value="">Medidas</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+                <option value="0">0</option>
+            </select> 
             <p>Descrição breve do produto 3. Conforto e praticidade em um só produto!</p>
             <div class="dish-price">
                 <h4>Valor a Consultar</h4>
@@ -236,14 +776,6 @@
         <!-- Outros produtos -->
 
     </div>
-
-    <!-- Seção "Voltar para o Menu" -->
-    <section class="voltar-menu">
-        <a href="index.html">
-            <button>Voltar para o Menu</button>
-        </a>
-    </section>
-
 </main>
 
 <footer>

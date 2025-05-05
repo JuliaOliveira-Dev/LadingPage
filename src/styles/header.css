@@ -3,7 +3,7 @@ header {
     padding: 28px 8%;
     position: sticky;
     top: 0;
-    background-color: #d4dff7;
+    background: linear-gradient(to right, #c9e0fa, #bbd9fa);
     z-index: 3;
 }
 
@@ -37,8 +37,8 @@ header {
 
 /* Estilo ao passar o mouse sobre o item */
 .nav-item a:hover {
-    color: #c9260a;
-    border-bottom: 3px solid #c9260a;
+    color: #0c5aa3;
+    border-bottom: 3px solid #0a73c9;
 }
 
 #mobile_btn { 

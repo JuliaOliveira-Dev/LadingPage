@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galeria da Loja</title>
+
+  <!-- Fonte Poppins local -->
+  <style>
+    @font-face {
+      font-family: 'Poppins';
+      src: url('src/fonts/Poppins-Regular.woff2') format('woff2'),
+           url('src/fonts/Poppins-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Poppins';
+      src: url('src/fonts/Poppins-SemiBold.woff2') format('woff2'),
+           url('src/fonts/Poppins-SemiBold.woff') format('woff');
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    header {
+      background: linear-gradient(to right, #01367c, #08acc9);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    .btn-voltar {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 15px 30px;
+      background: linear-gradient(to right, #01367c, #08acc9);
+      color: white;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      width: auto;
+    }
+
+    .btn-voltar:hover {
+      background-color: #08acc9;
+    }
+
+    .galeria-horizontal {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    .galeria-horizontal a img {
+      width: 100%;
+      max-width: 280px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .galeria-videos {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .galeria-videos h2 {
+      width: 100%;
+      text-align: center;
+      font-size: 1.8rem;
+      color: #01367c;
+      margin-bottom: 20px;
+    }
+
+    .video-box {
+      flex: 1 1 30%;
+      max-width: 350px;
+    }
+
+    .video-box video {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: linear-gradient(to right, #01367c, #08acc9);
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      margin-top: auto;
+      width: 100%;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+
+  <!-- Fancybox CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+  />
+</head>
+
+<body>
+  <header>
+    <a href="index.html" class="btn-voltar">Voltar ao Menu</a>
+    <h1 data-aos="fade-down">Galeria da Loja</h1>
+    <p data-aos="fade-up" data-aos-delay="200">Explore nosso espaço e produtos!</p>
+  </header>
+
+  <main>
+    <section class="galeria-horizontal" data-aos="fade-up">
+      <!-- Álbum 1 -->
+      <a href="src/images/mp1.jpg" data-fancybox="Nossa Loja" data-caption="Nossa Loja">
+        <img src="src/images/mp1.jpg" alt="Nossa Loja" />
+      </a>
+      <a href="src/images/mp2.jpg" data-fancybox="Nossa Loja" data-caption="Nossa Loja" style="display: none;"></a>
+      <a href="src/images/mp3.jpg" data-fancybox="Nossa Loja" data-caption="Nossa Loja" style="display: none;"></a>
+      <a href="src/images/mp4.jpg" data-fancybox="Nossa Loja" data-caption="Nossa Loja" style="display: none;"></a>
+      <a href="src/images/mp5.jpg" data-fancybox="Nossa Loja" data-caption="Nossa Loja" style="display: none;"></a>
+      <a href="src/images/mp6.jpg" data-fancybox="Nossa Loja" data-caption="Nossa Loja" style="display: none;"></a>
+
+      <!-- Álbum 2 -->
+      <a href="src/images/mp frente.PNG" data-fancybox="album2" data-caption="Foto 1 do Álbum 2">
+        <img src="src/images/mp frente.PNG" alt="Álbum 2" />
+      </a>
+      <a href="src/images/mp frente2.PNG" data-fancybox="album2" data-caption="Foto 2 do Álbum 2" style="display: none;"></a>
+      <a href="src/images/mp frente3.jfif" data-fancybox="album2" data-caption="Foto 3 do Álbum 2" style="display: none;"></a>
+
+      <!-- Álbum 3 -->
+      <a href="src/images/interior3.PNG" data-fancybox="album3" data-caption="Foto 1 do Álbum 3">
+        <img src="src/images/interior3.PNG" alt="Álbum 3" />
+      </a>
+      <a href="src/images/interior1.PNG" data-fancybox="album3" data-caption="Foto 2 do Álbum 3" style="display: none;"></a>
+      <a href="src/images/interior4.PNG" data-fancybox="album3" data-caption="Foto 3 do Álbum 3" style="display: none;"></a>
+      <a href="src/images/interior6.PNG" data-fancybox="album3" data-caption="Foto 4 do Álbum 3" style="display: none;"></a>
+    </section>
+
+    <section class="galeria-videos" data-aos="fade-up">
+      <h2>Vídeos da Loja</h2>
+
+      <div class="video-box">
+        <video controls>
+          <source src="src/images/WhatsApp Video 2025-04-15 at 08.59.46.mp4" type="video/mp4" />
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+
+      <div class="video-box">
+        <video controls>
+          <source src="src/images/SEU-SEGUNDO-VIDEO.mp4" type="video/mp4" />
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+
+      <div class="video-box">
+        <video controls>
+          <source src="src/images/SEU-TERCEIRO-VIDEO.mp4" type="video/mp4" />
+          Seu navegador não suporta vídeo.
+        </video>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Martins Peres. Todos os direitos reservados.
+  </footer>
+
+  <!-- AOS Animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  </script>
+
+  <!-- Fancybox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+</body>
+</html>
